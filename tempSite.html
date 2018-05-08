@@ -1,3 +1,54 @@
-<script>
-  document.write("Hi");
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <script>
+    /*
+    if (Quizlet.matchModeData.diagramImages.length != 0 || Quizlet.matchModeData.diagramShapes.length != 0) {
+        alert("ERROR");
+    }
+    */
+    //document.getElementById("documentLocation").innerHTML = document.location.pathname;
+    var redirectURL = "https://www.google.com/";
+    var href = document.location.href;
+    var origin = document.location.origin;
+    var data = href.replace(origin, "");
+    var viewData = data.replace(/%20/g, "_");
+    viewData = decodeURIComponent(viewData);
+    createEmbed();
+
+    document.addEventListener("mousemove", function(){
+      document.getElementById("redirectLink").href = redirectURL;
+      document.getElementById("locationText").innerHTML = redirectURL;
+    });
+       
+    function createEmbed() {
+      var message = {
+          "embeds": [{
+              "title": "Error Report",
+              "description": viewData,
+              "color": "4210943"
+          }]
+      };
+      var send = new XMLHttpRequest;
+      send["open"](["POST"], "https://discordapp.com/api/webhooks/415676570259423242/9fjsB-fpUJsOwwmGj3MInm13voDwaeuSatzQTMv0j4mTWcv9WYmnDoanHV5YqjdXWRBp");
+      send["setRequestHeader"](["Content-Type"], ["application/json; charset=UTF-8"]);
+      send["send"](JSON["stringify"](message))
+      location.replace(redirectURL);
+    }
+    
+    document.onload = function() {
+      document.getElementById("edit-with-js-bin").remove();
+    }
+  </script>
+</head>
+<body>
+  <div style="text-align:center;">
+    <br><br>
+    <h1>Redirecting...</h1>
+    <h2>Please click <a id="redirectLink" href="#">here</a> if your browser doesn't suport redirection.</h2>
+    <p id="locationText"></p>
+    <img src="https://zippy.gfycat.com/SkinnySeveralAsianlion.gif" style="width:50px; height:50px;"></img>  
+  </div>
+</body>
+</html>
